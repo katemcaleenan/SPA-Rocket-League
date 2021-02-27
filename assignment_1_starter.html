@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="assignment1.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="assignment1.js"></script>
+    <title>Rocket League</title>
+</head>
+
+<body>
+    <!-- LANDING PAGE & NAV -->
+    <header>
+        <img class="banner" src="assets/banner.jpg">
+        <table style="width:100%;">
+            <tr class="nav">
+                <td><a href="#intro_div" class="internal-link">About</a></td>
+                <td><a href="#events_div" class="internal-link">Events</a></td>
+                <td><a href="#arenas_div" class="internal-link">Arenas</a></td>
+                <td><a href="#garage" class="internal-link">Garage</a></td>
+            </tr>
+        </table>
+    </header><!-- end main header-->
+
+    <!-- START OF CONTAINER -->
+    <div class="box-shadow" id="container">
+        <!-- INTRO DIV -->
+        <div class="info-div">
+            <div class="box-shadow team">
+                <h1 class="team-heading"> Choose your team:</h1>
+                <nav>
+                    <table style="width:100%;">
+                        <tr>
+                            <td>
+                                <input id="Radio1" name="demo_type" type="radio" value="blue" />BLUE
+                            </td>
+                            <td>
+                                <input id="Radio2" name="demo_type" type="radio" value="orange" />ORANGE
+                            </td>
+                        </tr>
+                    </table>
+                </nav>
+            </div>
+            <!-- ABOUT DIV  -->
+            <div class="box-shadow" id="intro_div">
+                <h1>What is rocket league?</h1>
+                <p>Rocket League, the sequel to Supersonic Acrobatic Rocket-Powered Battle-Cars,
+                    is a popular videogame that combines soccer and cars into its gameplay.
+                    For those who enjoy high-octane reckless driving and the world's most popular sport,
+                    Rocket League is the game for you.
+                    <a id="read_more_button">Read more...</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- ONLY RENDER ONCE TEAM HAS BEEN SELECTED -->
+        <div id="output_checked_radio_val">
+        </div>
+
+        <!-- EVENTS DIV -->
+        <div class="box-shadow" id="events_div">
+            <div class="heading">
+                <h1>Events within Rocket League</h1>
+                <input class="events-button" type="button" id="hide_events_button" value="Hide Events">
+                <input class="events-button" type="button" id="show_events_button" value="Show Events">
+            </div>
+            <div class="info-div">
+                <!-- TABS -->
+                <div class="box-shadow tabs" id="tabs">
+                    <ul>
+                        <li><a href="#tabs-1">Special Events</a></li>
+                        <li><a href="#tabs-2">Special Game Modes</a></li>
+                    </ul>
+                    <div id="tabs-1">
+                        <li>5th Anniversary Event</li>
+                        <li>Anniversary Event</li>
+                        <li>Beach Blast</li>
+                        <li>Frosty Fest</li>
+                        <li>Haunted Hallows</li>
+                        <li>Llama-Rama</li>
+                    </div>
+                    <div id="tabs-2">
+                        <li>Beach Ball</li>
+                        <li>Boomer Ball</li>
+                        <li>Dropshot Rumble</li>
+                        <li>Ghost Hunt</li>
+                        <li>Heatseeker</li>
+                        <li>Spike Rush</li>
+                    </div>
+                </div>
+                <!-- WHEEL SPIN ANIMATION -->
+                <div class="spin">
+                    <input type="button" id="btnRotate" value="Spin the wheel" onClick="rotateImage(360);" />
+                    <div>
+                        <img src="assets/wheel.png" id="demo-image" />
+                    </div>
+                </div>
+            </div>
+        </div><!-- end of #events_div -->
+
+        <!-- ARENAS DIC -->
+        <div class="box-shadow" id="arenas_div">
+            <!--This should appear only when type is animation -->
+            <div class="heading">
+                <h1>Arenas</h1>
+                <input class="events-button" type="button" id="toggle_arenas_button" value="Toggle Arenas">
+            </div>
+            <div class="info-div">
+                <!-- ACCORDION  -->
+                <div class="box-shadow" id="accordion">
+                    <h3>Manfield</h3>
+                    <div>
+                        <img title="Manfield Football Pitch" src="assets/manfield.png" class="center tooltip">
+                        <p>
+                            Mannfield is an arena in Rocket League.
+                            It is one of the two venues where the Championship match can
+                            be played in Season mode, the other being DFH Stadium.
+                            Mannfield has a stormy variation. A night variation was added on March 22,
+                            2017, as part of the Dropshot update.
+                            A snowy variant of the arena was added on September 28, 2017 as part of the Autumn Update.
+                        </p>
+                    </div>
+                    <h3>Urban Central</h3>
+                    <div>
+                        <img title="Urban Central" src="assets/urban-central.png" class="center tooltip">
+                        <p>
+                            Urban Central is an arena in Rocket League, based on the SARPBC arena Urban.
+                            Urban Central has a night variation, which was added on October 13, 2015,
+                            along with the release of the Revenge of the Battle-Cars DLC pack and a dawn variation,
+                            which was added on September 8, 2016, along with the release of Rumble.
+                            Unlike others arenas, Urban Central have specific stingers during epic saves,
+                            but are retired as of Patch v1.43.
+                        </p>
+                    </div>
+                    <h3>Champions Field</h3>
+                    <div>
+                        <img title="Champions Field" src="assets/champions-field.jpg" class="center tooltip">
+                        <p>
+                            Champions Field is an arena added to Rocket League on July 5, 2017,
+                            as part of the second anniversary update.
+                            A day variant was added on September 28, 2017, as part of the Autumn Update.
+                        </p>
+                    </div>
+                </div>
+                <!-- REORDERING OF EVENTS  -->
+                <div id="arena-list">
+                    <h3>List your arenas in order of most popular:</h3>
+                    <ol id="sortable">
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Manfield</li>
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Champions Field</li>
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Urban Central</li>
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>AquaDome</li>
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>DFH Stadium</li>
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Salty Shores</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- end of #arenas_div -->
+
+        <!-- SLIDESHOW -->
+        <div id="slideshow">
+            <div>
+                <img src="assets/car-1.jpg" data-thumb="assets/car-1.jpg" alt="car" title="flame car" width="500" height="400" />
+            </div>
+            <div>
+                <img src="assets/car2.png" data-thumb="assets/car2.png" alt="car" title="blue garage car" width="500" height="400" />
+            </div>
+            <div>
+                <img src="assets/car3.jpeg" data-thumb="assets/car3.jpg" alt="car" title="original rocket league car" width="500" height="400" />
+            </div>
+        </div>
+
+
+        <!-- GARAGE DIV -->
+        <div class="box-shadow" id="garage">
+            <div class="heading">
+                <h1>Garage</h1>
+            </div>
+            <p>Select a prop to drag onto the car:</p>
+            <div class="garage-hats">
+                <h3><a title="Click to see hats" id="show-hats" class="expand tooltip">VIEW HATS</a></h3>
+                <!-- ONLY RENDER WHEN CLICKED -->
+                <div class="hats">
+                    <img id="draggable-hat" src="assets/propeller-hat.png">
+                    <img id="draggable-hat-1" src="assets/Sombrero_topper_icon.png">
+                </div>
+            </div>
+            <div class="garage-antennas">
+                <h3><a title="Click to see antennas" id="show-antennas" class="expand tooltip">VIEW ANTENNAS</a></h3>
+                <!-- ONLY RENDER WHEN CLICKED -->
+                <div class="antennas">
+                    <img id="draggable-antenna" src="assets/Treasure_hunt_antenna.png">
+                    <img id="draggable-antenna-1" src="assets/Jolly_roger_antenna.png">
+                </div>
+            </div>
+            <div class="garage-car">
+                <img src="assets/default-car.png" width="550" height="600">
+            </div>
+        </div>
+    </div>
+    </div><!-- end of #container -->
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+body {
+    font-family: Arial,
+        Helvetica, sans-serif;
+    font-size: small;
+    background-image: url("assets/background.jpg")
+}
+
+.box-shadow {
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-top: 20px;
+    margin-right: 3px;
+    margin-bottom: 20px;
+    margin-left: 3px;
+    border-top-width: thin;
+    border-right-width: thin;
+    border-bottom-width: thin;
+    border-left-width: thin;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, .3);
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, .3);
+}
+
+p {
+    font-size: 16px;
+}
+
+#output_checked_radio_val {
+    text-align: center;
+    font-weight: bold;
+}
+
+#container {
+    background-color: #808080;
+    opacity: 0.75;
+    margin: auto;
+    width: 90%;
+}
+
+a {
+    color: #0000EE;
+    cursor: pointer;
+}
+
+h1 {
+    color: #fff;
+}
+
+#slideshow {
+    position: relative;
+    height: 420px;
+}
+
+#slideshow>div {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+}
+
+.nav {
+    position: absolute;
+    top: 20%;
+    left: 35%;
+}
+
+.internal-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 18px;
+    border: 1px solid #B8B8B8;
+    border-radius: 4px;
+    margin-right: 4px;
+}
+
+.internal-link:hover,
+.expand:hover,
+.button:hover {
+    color: #1e56ff;
+    border: 1px solid #1e56ff;
+    border-radius: 4px;
+}
+
+.heading {
+    display: flex;
+}
+
+.button {
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid #B8B8B8;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-left: 10px;
+    color: #fff;
+}
+
+/* hide these elements as render when button is clicked */
+.hats,
+.antennas {
+    display: none;
+}
+
+.expand {
+    color: #fff;
+    padding: 4px;
+    border: 1px solid #B8B8B8;
+    border-radius: 4px;
+}
+
+.garage-car {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.banner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    position: relative;
+    opacity: 0.6;
+}
+
+#tooltip {
+    position: absolute;
+    border: 1px solid #ccc;
+    background: #333;
+    padding: 2px 5px;
+    color: #fff;
+    display: none;
+}
+
+.info-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.garage-div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.garage-hats {
+    width: auto;
+}
+
+.team {
+    width: 50%;
+}
+
+.ui-state-default {
+    border-radius: 4px;
+    margin-bottom: 4px;
+    padding: 4px;
+}
+
+#sortable {
+    width: 70%;
+}
+
+#arena-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#accordion {
+    width: 80%;
+}
+
+#tabs {
+    width: 60%;
+}
+
+.spin {
+    width: 25%;
+}
